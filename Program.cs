@@ -27,12 +27,13 @@ namespace RedElixir
             //---------------------------------------
             // Run Class variables
             string State = "";
+            System.ConsoleKey KeyInput = ConsoleKey.Enter;
 
             //---------------------------------------
             // Display the initial title screen
             Screens.WriteTitle();
 
-            while (Console.ReadKey(true).Key != ConsoleKey.Q)
+            while (KeyInput != System.ConsoleKey.Q)
             {
                 switch (State)
                 {
@@ -42,8 +43,7 @@ namespace RedElixir
 
                     default:
                         Screens.WriteTitle();
-
-                        State = Console.ReadKey(true).Key == ConsoleKey.S ? "NewGame" : ""; 
+                        KeyInput = Console.ReadKey(true).Key;
                         break;
 
                 }
