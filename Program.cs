@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace RedElixir
 {
@@ -6,8 +7,8 @@ namespace RedElixir
     {
         static void Main(string[] args)
         {
-            // Basic setup & sizing for the console window
             Console.Title = "RedElixir - v1.0.0";
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.SetWindowSize(81,30);
             Console.SetBufferSize(81, 30);
             Console.CursorVisible = false;
@@ -15,8 +16,15 @@ namespace RedElixir
             do
             {
                 WriteTitle();
-            } while (Console.ReadKey().Key != ConsoleKey.Q);  
+            }
+            while (Console.ReadKey(true).Key != ConsoleKey.Q);
         }
+
+        //---------------------------------------------------------------------------------------------------------
+        // Class WriteTitle() 
+        // -Writes a simple title screen for the game start
+        //
+        //---------------------------------------------------------------------------------------------------------
         private static void WriteTitle()
         {
             Console.Clear();
@@ -45,7 +53,22 @@ namespace RedElixir
             Console.WriteLine(@" =                                                                              =");
             Console.WriteLine(@" =                                                                              =");
             Console.WriteLine(@" =                                                                              =");
+            Console.WriteLine(@" =                                                                              =");
+            Console.WriteLine(@" =                                                                              =");
+            Console.WriteLine(@" =                                                                              =");
+            Console.WriteLine(@" =                                                                              =");
+            Console.WriteLine(@" =                                                                              =");
             Console.WriteLine(@" ================================================================================");
+        }
+
+        //---------------------------------------------------------------------------------------------------------
+        // Class NewGame() 
+        // -Generates a new game save by: Creating a new XML file, filling that XML file with information for the 
+        // in-game character.
+        //---------------------------------------------------------------------------------------------------------
+        private static void NewGame()
+        {
+            Console.Clear();
         }
     }
 }
