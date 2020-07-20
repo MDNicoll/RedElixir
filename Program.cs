@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiteDB;
+using System;
 
 namespace RedElixir
 {
@@ -6,7 +7,6 @@ namespace RedElixir
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
         }
     }
 }
