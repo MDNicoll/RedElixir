@@ -9,7 +9,7 @@ namespace RedElixir
         public static void WriteTitle()
         {
             Console.Clear();
-
+            
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(@" ================================================================================");
             Console.WriteLine(@" =                      (                                                       =");
@@ -46,8 +46,21 @@ namespace RedElixir
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
+            
             Console.WriteLine(@" ================================================================================");
-            Console.WriteLine(@" =                              CHARACTER CREATION                              =");
+            Console.Write(@" =                              "); 
+            Console.ForegroundColor = ConsoleColor.White; 
+            Console.Write("CHARACTER CREATION");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("                              =");
+            
+            Console.WriteLine(@" ================================================================================");
+            Console.WriteLine(@" =   NAME:                             == LVL: [----------------?-------------] =");
+            Console.WriteLine(@" = GENDER:                             ==  HP: [----------------?-------------] =");
+            Console.WriteLine(@" =   RACE:                             ==  MP: [----------------?-------------] =");
+            Console.WriteLine(@" =  CLASS:                             ==  FP: [----------------?-------------] =");
+            Console.WriteLine(@" =  FAITH:                             ==  STR:    | INT:    | CON:    |=========");
+            Console.WriteLine(@" =    AGE:                             ==  DEX:    | FAI:    | LCK:    |=========");
             Console.WriteLine(@" ================================================================================");
             Console.WriteLine(@" =                                                                              =");
             Console.WriteLine(@" =                                                                              =");
@@ -67,14 +80,26 @@ namespace RedElixir
             Console.WriteLine(@" =                                                                              =");
             Console.WriteLine(@" =                                                                              =");
             Console.WriteLine(@" =                                                                              =");
-            Console.WriteLine(@" =                                                                              =");
-            Console.WriteLine(@" =                                                                              =");
-            Console.WriteLine(@" =                                                                              =");
-            Console.WriteLine(@" =                                                                              =");
-            Console.WriteLine(@" =                                                                              =");
-            Console.WriteLine(@" =                                                                              =");
-            Console.WriteLine(@" =                                                                              =");
             Console.WriteLine(@" ================================================================================");
+        }
+
+        public static void WriteProgressBar(int Stat)
+        {
+            //---------------------------------------
+            // Calculate the number of - before and after the stat
+            string sStat = Stat.ToString();
+            int sStatLen = sStat.Length;
+
+            //---------------------------------------
+            // What this function will output 
+            // [----------------?-------------] (30 Char long between [])
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(@"[");
+
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(@"]");
         }
     }
 }

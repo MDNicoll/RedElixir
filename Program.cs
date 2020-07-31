@@ -28,6 +28,12 @@ namespace RedElixir
             // Run Class variables
             string State = "";
             System.ConsoleKey KeyInput = ConsoleKey.Enter;
+            
+            //---------------------------------------
+            // Run Main Menu Music
+            var audioPlayer = new BasicAudio.AudioPlayer();
+            audioPlayer.Filename = @"Z:\0 - REPOSITORIES\RedElixir\Music\WAV\WildWestVikings.wav"; //NEED FUNCTION FOR DYNAMICLY GETTING FILES
+            audioPlayer.Play();
 
             //---------------------------------------
             // Display the initial title screen
@@ -39,11 +45,17 @@ namespace RedElixir
                 {
                     case "NewGame":
                         Screens.WriteNewGame();
+                        KeyInput = Console.ReadKey(true).Key;
+                        break;
+
+                    case "LoadGame":
+                        State = "";
                         break;
 
                     default:
                         Screens.WriteTitle();
                         KeyInput = Console.ReadKey(true).Key;
+                        State = KeyInput == ConsoleKey.S ? "NewGame" : KeyInput == ConsoleKey.L ? "LoadGame" : "";
                         break;
 
                 }
